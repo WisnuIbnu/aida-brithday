@@ -37,7 +37,6 @@ export default function FloatingNavbar() {
 
   const [activeTab, setActiveTab] = useState<TabId>("travel");
   const [touchedTab, setTouchedTab] = useState<TabId | null>(null);
-  const [prevActiveTab, setPrevActiveTab] = useState<TabId>("travel");
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const navWidth = useTransform(
@@ -106,11 +105,6 @@ export default function FloatingNavbar() {
     ["0 0 0 rgba(0,0,0,0)", "0 8px 24px rgba(55,42,38,0.1)", "0 16px 48px rgba(55,42,38,0.2)"]
   );
   
-  const logoOpacity = useTransform(
-    smoothScrollYProgress,
-    [0, 0.05, 0.2],
-    [1, 0.5, 0]
-  );
   
   const logoColor = useTransform(
     smoothScrollYProgress,
@@ -133,7 +127,6 @@ export default function FloatingNavbar() {
   }, []);
 
   const handleTabClick = (tabId: TabId) => {
-    setPrevActiveTab(activeTab);
     setActiveTab(tabId);
     setTouchedTab(tabId);
 
@@ -177,7 +170,7 @@ export default function FloatingNavbar() {
       >
         {/* LOGO - Kiri */}
         <motion.span
-          className="font-display text-xl italic tracking-wide sm:text-2xl lg:text-3xl whitespace-nowrap flex-shrink-0"
+          className="font-display text-xl italic tracking-wide sm:text-2xl lg:text-3xl whitespace-nowrap shrink-0"
           aria-label="Jim and Pam initials"
           style={{ 
             color: logoColor,
@@ -191,7 +184,7 @@ export default function FloatingNavbar() {
         <div className="flex-1" />
 
         {/* TABS + RSVP - Mepet kanan */}
-        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           {/* TAB CONTAINER */}
           <div className="hidden lg:flex items-center">
             <div className="relative flex items-center rounded-full bg-[#f6f1e9]/90 p-0.5">
@@ -228,7 +221,7 @@ export default function FloatingNavbar() {
                       text-sm sm:text-base font-semibold
                       transition-all duration-300
                       whitespace-nowrap
-                      min-w-[60px] sm:min-w-[80px]
+                      min-w-15 sm:min-w-20
                       ${isActive ? "text-zinc-900" : "text-zinc-500"}
                       ${isTouched ? "scale-95 opacity-60" : "scale-100 opacity-100"}
                       hover:text-zinc-700
@@ -236,7 +229,7 @@ export default function FloatingNavbar() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="flex-shrink-0">{tab.icon}</span>
+                    <span className="shrink-0">{tab.icon}</span>
                     <span className="truncate">{tab.label}</span>
                   </motion.button>
                 );
@@ -253,7 +246,7 @@ export default function FloatingNavbar() {
                 sm:px-4 sm:py-2
                 transition-all duration-300
                 hover:scale-105
-                flex-shrink-0
+                shrink-0
                 bg-[#8B6914] hover:bg-[#6B4F12] // ← TAMBAHKAN INI
                 text-white // ← Pastikan teks putih
                 border-none // ← Hilangkan border jika ada
