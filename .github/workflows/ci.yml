@@ -1,0 +1,39 @@
+# CI pipeline: runs on every push & pull request.
+# Goal: catch broken builds / lint / type errors before they merge.
+# No Docker needed — GitHub gives us a free Linux VM with Node preinstalled.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Stop the older run if you push again to the same branch/PR.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Download your repo code into the VM.
+      - uses: actions/checkout@v4
+
+      # 2. Install the exact Node version your project expects.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm # auto-caches node_modules for fast repeat builds
+
+      # 3. Install dependencies (uses the cache from above).
+      - run: npm ci
+        # `npm ci` = clean, locked install from package-lock.json.
+        # It FAILS if lockfile is out of sync — perfect for CI.
+
+      # 4. Lint, type-check, and build. Any of these failing = red build.
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm run build
