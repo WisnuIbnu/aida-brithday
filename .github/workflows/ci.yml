@@ -28,10 +28,15 @@ jobs:
           node-version: 20
           cache: npm # auto-caches node_modules for fast repeat builds
 
-      # 3. Install dependencies (uses the cache from above).
-      - run: npm ci
-        # `npm ci` = clean, locked install from package-lock.json.
-        # It FAILS if lockfile is out of sync — perfect for CI.
+      # 3. Install dependencies.
+      # We use `npm install`, NOT `npm ci`, because this project has
+      # platform-specific native deps (Tailwind v4's oxide engine pulls
+      # @emnapi/* natively). The lockfile committed from Windows only records
+      # Windows native variants, so a Linux CI runner needs npm to reconcile
+      # and fetch the Linux variants itself. `npm ci` is strict and would abort
+      # because the lockfile differs per platform. `npm install` handles this
+      # while still respecting the versions pinned in package.json.
+      - run: npm install
 
       # 4. Lint, type-check, and build. Any of these failing = red build.
       - run: npm run lint
