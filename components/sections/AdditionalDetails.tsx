@@ -338,9 +338,7 @@ export default function AdditionalDetails() {
   // 🔥 Handler untuk set active card dan reset index sekaligus
   const handleSetActiveCard = (card: DetailCard | null) => {
     setActiveCard(card);
-    if (card) {
-      setCurrentPhotoIndex(0);
-    }
+    setCurrentPhotoIndex(0);
   };
 
   // Effect untuk scroll lock dan keyboard navigation
