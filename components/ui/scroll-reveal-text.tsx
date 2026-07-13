@@ -1,3 +1,4 @@
+// components/ui/scroll-reveal-text.tsx
 'use client';
 
 import { useMemo, useRef } from 'react';
@@ -22,10 +23,10 @@ interface ScrollRevealTextProps {
 export const ScrollRevealText = ({
   text,
   className = '',
-  revealType = 'blur',
-  scrollOffset = ['start 0.9', 'start 0.3'],
-  staggerDelay = 0.03,
-  blurAmount = 10,
+  revealType = 'characters',
+  scrollOffset = ['start 0.9', 'end 0.3'],
+  staggerDelay = 0.025,
+  blurAmount = 6,
   slideDistance = 30,
 }: Readonly<ScrollRevealTextProps>) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -90,6 +91,7 @@ export const ScrollRevealText = ({
               scrollYProgress={scrollYProgress}
               staggerDelay={staggerDelay}
               blurAmount={blurAmount}
+              totalCharacters={characters.length}
             />
           ))}
         </span>
@@ -106,16 +108,24 @@ interface CharacterRevealProps {
   scrollYProgress: MotionValue<number>;
   staggerDelay: number;
   blurAmount: number;
+  totalCharacters: number;
 }
 
-const CharacterReveal = ({ char, index, scrollYProgress, staggerDelay, blurAmount }: CharacterRevealProps) => {
-  const staggerOffset = index * staggerDelay;
-  const startProgress = Math.min(staggerOffset, 0.5);
-  const endProgress = Math.min(staggerOffset + 0.3, 1);
+const CharacterReveal = ({ 
+  char, 
+  index, 
+  scrollYProgress, 
+  staggerDelay, 
+  blurAmount,
+  totalCharacters
+}: CharacterRevealProps) => {
+  const progressPerChar = 0.6 / totalCharacters; 
+  const startProgress = index * progressPerChar;
+  const endProgress = startProgress + 0.12;
 
   const opacity = useTransform(scrollYProgress, [startProgress, endProgress], [0, 1]);
   const blur = useTransform(scrollYProgress, [startProgress, endProgress], [blurAmount, 0]);
-  const y = useTransform(scrollYProgress, [startProgress, endProgress], [10, 0]);
+  const y = useTransform(scrollYProgress, [startProgress, endProgress], [12, 0]);
   const filterBlur = useTransform(blur, (v) => `blur(${v}px)`);
 
   return (
@@ -126,7 +136,7 @@ const CharacterReveal = ({ char, index, scrollYProgress, staggerDelay, blurAmoun
         filter: filterBlur,
         y,
         display: char === ' ' ? 'inline' : 'inline-block',
-        minWidth: char === ' ' ? '0.3em' : 'auto',
+        minWidth: char === ' ' ? '0.25em' : 'auto',
       }}
     >
       {char === ' ' ? '\u00A0' : char}

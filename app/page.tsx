@@ -3,6 +3,9 @@ import ParallaxHero from "@/components/sections/ParallaxHero";
 import PostParallaxMessage from "@/components/sections/PostParallaxMessage";
 import OurStory from "@/components/sections/OurStory";
 import AdditionalDetails from "@/components/sections/AdditionalDetails";
+import CountdownTimer from "@/components/sections/CountdownTimer";
+import FooterHero from "@/components/sections/FooterHero";
+import ParallaxMessage from "@/components/sections/ParallaxMassagge";
 
 export default function Home() {
   return (
@@ -21,7 +24,10 @@ export default function Home() {
       <ParallaxHero />
       <PostParallaxMessage />
       <OurStory />
+      <CountdownTimer />
       <AdditionalDetails />
+      <ParallaxMessage />
+      <FooterHero />
     </main>
   );
 }
