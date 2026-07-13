@@ -33,7 +33,7 @@ const storyData: StoryChapter[] = [
     chapter: "chapter one",
     title: "how we met",
     text: "We met at university, became fast friends, and eventually realized the best parts of every week were the parts we spent together.",
-    align: "left",
+    align: "left", // ID 1 di kiri
     rotation: -4,
     photos: [
       {
@@ -55,7 +55,7 @@ const storyData: StoryChapter[] = [
     chapter: "chapter two",
     title: "falling in love",
     text: "Toronto became our home base for late dinners, weekend walks, shared routines, and all of the small moments that made life feel bigger.",
-    align: "left",
+    align: "right", // ID 2 di kanan
     rotation: 3,
     photos: [
       {
@@ -81,7 +81,7 @@ const storyData: StoryChapter[] = [
     chapter: "chapter three",
     title: "the next step",
     text: "A trip, a question, a very easy yes, and suddenly the future we had been imagining became something we could invite everyone into.",
-    align: "right",
+    align: "left", // ID 3 di kiri
     rotation: -2,
     photos: [
       {
@@ -103,7 +103,7 @@ const storyData: StoryChapter[] = [
     chapter: "chapter four",
     title: "forever",
     text: "Now we're here, planning a celebration of everything that brought us to this moment, and everything that comes next.",
-    align: "right",
+    align: "right", // ID 4 di kanan
     rotation: 5,
     photos: [
       {
@@ -340,12 +340,10 @@ export default function OurStory() {
 
   return (
     <section ref={sectionRef} className="relative h-[560vh] bg-transparent">
-      {/* 🔥 PADDING TOP LEBIH KECIL */}
       <div className="sticky top-0 flex h-screen flex-col items-center justify-start overflow-hidden px-4 pt-4 sm:px-6 sm:pt-5 lg:px-10">
         
-        {/* 🔥 TITLE "Our story" - LEBIH BESAR, BOLD, ITALIC */}
         <div className="relative z-20 w-full text-center pt-15">
-          <h2 className="font-display text-[clamp(5rem,9vw,10rem)] font italic leading-none tracking-tight text-zinc-900">
+          <h2 className="font-display text-[clamp(2rem,7vw,10rem)] font leading-none tracking-tight text-zinc-900">
             Our story
           </h2>
         </div>

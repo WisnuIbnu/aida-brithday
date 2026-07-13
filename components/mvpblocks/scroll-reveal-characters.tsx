@@ -2,7 +2,7 @@ import { ScrollRevealText } from '@/components/ui/scroll-reveal-text';
 
 export default function ScrollRevealCharacters() {
   return (
-    <div className="flex min-h-[400px] items-center justify-center p-8">
+    <div className="flex min-h-100 items-center justify-center p-8">
       <h1 className="text-4xl md:text-6xl">
         <ScrollRevealText
           text="Character by Character"
