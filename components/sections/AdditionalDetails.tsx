@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Plus, X, ChevronDown } from "lucide-react";
 
@@ -331,25 +331,19 @@ const detailCards: DetailCard[] = [
 export default function AdditionalDetails() {
   const [activeCard, setActiveCard] = useState<DetailCard | null>(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
-  const mountedRef = useRef(false);
-  const [mounted, setMounted] = useState(false);
-  const prevActiveCardRef = useRef<DetailCard | null>(null);
+  
+  // 🔥 HAPUS mounted state dan useLayoutEffect
+  // Langsung gunakan createPortal tanpa kondisi mounted
 
-
-  useEffect(() => {
-    if (!mountedRef.current) {
-      mountedRef.current = true;
-      setMounted(true);
+  // 🔥 Handler untuk set active card dan reset index sekaligus
+  const handleSetActiveCard = (card: DetailCard | null) => {
+    setActiveCard(card);
+    if (card) {
+      setCurrentPhotoIndex(0);
     }
-  }, []);
+  };
 
-useEffect(() => {
-  if (activeCard && activeCard !== prevActiveCardRef.current) {
-    setCurrentPhotoIndex(0); 
-    prevActiveCardRef.current = activeCard;
-  }
-}, [activeCard]);
-
+  // Effect untuk scroll lock dan keyboard navigation
   useEffect(() => {
     if (!activeCard) {
       return;
@@ -360,7 +354,7 @@ useEffect(() => {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setActiveCard(null);
+        handleSetActiveCard(null);
       }
       if (event.key === "ArrowLeft" && activeCard) {
         setCurrentPhotoIndex((prev) =>
@@ -420,7 +414,7 @@ useEffect(() => {
               key={card.id}
               type="button"
               className="group relative aspect-4/3 overflow-hidden rounded-[2rem] text-left shadow-[0_18px_45px_rgba(77,58,45,0.12)]"
-              onClick={() => setActiveCard(card)}
+              onClick={() => handleSetActiveCard(card)}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
@@ -482,16 +476,17 @@ useEffect(() => {
         </div>
       </div>
 
-      {mounted &&
+      {/* 🔥 LANGSUNG PAKAI createPortal TANPA KONDISI mounted */}
+      {typeof document !== "undefined" &&
         createPortal(
           <AnimatePresence>
             {activeCard ? (
               <motion.div
-                className="fixed inset-0 z-[60] flex items-end justify-center bg-black/55 backdrop-blur-sm pt-10"
+                className="fixed inset-0 z-60 flex items-end justify-center bg-black/55 backdrop-blur-sm pt-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onClick={() => setActiveCard(null)}
+                onClick={() => handleSetActiveCard(null)}
               >
                 <motion.div
                   className="relative w-full h-full max-h-[95vh] overflow-hidden bg-[#F9F8F6] shadow-[0_30px_120px_rgba(0,0,0,0.28)] rounded-t-[2.25rem] rounded-b-none"
@@ -509,7 +504,7 @@ useEffect(() => {
                 >
                   <button
                     type="button"
-                    onClick={() => setActiveCard(null)}
+                    onClick={() => handleSetActiveCard(null)}
                     className="absolute right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-[#2a211c] shadow-sm ring-1 ring-black/5 transition hover:bg-white"
                     aria-label="Close dialog"
                   >
@@ -530,7 +525,7 @@ useEffect(() => {
 
                   <div className="overflow-y-auto max-h-[75vh] px-4 pb-6 sm:px-6 sm:pb-8 lg:px-50 lg:pb-10">
                     {/* 1 Foto Besar dengan navigasi */}
-                    <div className="relative overflow-hidden rounded-xl bg-zinc-100 aspect-16/9">
+                    <div className="relative overflow-hidden rounded-xl bg-zinc-100 aspect-video">
                       <Image
                         src={activeCard.photos[currentPhotoIndex].src}
                         alt={activeCard.photos[currentPhotoIndex].caption}
