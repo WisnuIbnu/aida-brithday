@@ -36,12 +36,11 @@ export default function ParallaxHero() {
           }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1516589091380-5d8e87df6999?auto=format&fit=crop&w=2200&q=80"
+            src="/hero.webp"
             alt="Couple proposing in the mountains"
             fill
             priority
             className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 48vw"
           />
           <motion.div
             className="absolute inset-0 bg-linear-to-b from-black/25 via-black/10 to-black/45"
