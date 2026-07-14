@@ -343,8 +343,8 @@ export default function OurStory() {
       <div className="sticky top-0 flex h-screen flex-col items-center justify-start overflow-hidden px-4 pt-4 sm:px-6 sm:pt-5 lg:px-10">
         
         <div className="relative z-20 w-full text-center pt-15">
-          <h2 className="font-display text-[clamp(2rem,7vw,10rem)] font leading-none tracking-tight text-zinc-900">
-            Our story
+          <h2 className="font-display italic text-[clamp(2rem,7vw,10rem)] font leading-none tracking-tight text-zinc-900">
+            Our Love Story
           </h2>
         </div>
 

@@ -3,7 +3,21 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
-const TARGET_DATE = new Date("2027-06-18T00:00:00");
+const TARGET_DATE = new Date("2030-07-04T00:00:00");
+
+const LOVE_SHAPES = ["❤️", "💖", "💗", "💕", "💓", "💞", "♥️", "🌸", "🤍"];
+
+type Confetti = {
+  id: number;
+  side: "left" | "right";
+  y: number;
+  dx: number;
+  dy: number;
+  rot: number;
+  size: number;
+  shape: string;
+  duration: number;
+};
 
 interface TimeLeft {
   days: number;
@@ -61,6 +75,62 @@ export default function CountdownTimer() {
   const [time, setTime] = useState<TimeLeft | null>(null);
   const reduceMotion = useReducedMotion();
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  // 🔥 Love Confetti dari kiri & kanan saat section masuk viewport
+  const [confetti, setConfetti] = useState<Confetti[]>([]);
+  const confettiId = useRef(0);
+  const firedRef = useRef(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const fireConfetti = () => {
+      if (firedRef.current) return;
+      firedRef.current = true;
+
+      const vh = window.innerHeight;
+      const batch: Confetti[] = [];
+      const perSide = 22;
+      const make = (side: "left" | "right") => {
+        for (let i = 0; i < perSide; i++) {
+          const fromLeft = side === "left";
+          const dx = (fromLeft ? 1 : -1) * (60 + Math.random() * 180);
+          const dy = -(80 + Math.random() * 220); 
+          batch.push({
+            id: ++confettiId.current,
+            side,
+            y: Math.random() * vh,
+            dx,
+            dy,
+            rot: (Math.random() - 0.5) * 360,
+            size: 16 + Math.random() * 26,
+            shape: LOVE_SHAPES[Math.floor(Math.random() * LOVE_SHAPES.length)],
+            duration: 1.6 + Math.random() * 1.2,
+          });
+        }
+      };
+      make("left");
+      make("right");
+
+      setConfetti((prev) => [...prev, ...batch]);
+      setTimeout(() => {
+        setConfetti((prev) => prev.filter((c) => !batch.some((b) => b.id === c.id)));
+      }, 3200);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) fireConfetti();
+        });
+      },
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
 
@@ -83,7 +153,7 @@ export default function CountdownTimer() {
   const display: TimeLeft = time ?? { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
   return (
-    <section className="relative z-10 h-[300vh] bg-transparent">
+    <section ref={sectionRef} className="relative z-10 h-[300vh] bg-transparent">
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
       {/* Background blur */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-100/40 blur-3xl" />
@@ -106,7 +176,7 @@ export default function CountdownTimer() {
           variants={itemVariants}
           className="font-display mb-3 mt-4 font italic leading-none tracking-tight text-zinc-900 text-[clamp(2.75rem,8vw,7rem)]"
         >
-          june 18, 2027
+          July 04, 2030
         </motion.h2>
 
         <motion.div
@@ -161,6 +231,27 @@ export default function CountdownTimer() {
           — saving the date —
         </motion.p>
       </motion.div>
+
+      {/* 🔥 Love Confetti — dari sisi kiri & kanan saat section terlihat */}
+      <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+        {confetti.map((c) => (
+          <motion.span
+            key={c.id}
+            className="absolute select-none"
+            style={{
+              top: c.y,
+              left: c.side === "left" ? 0 : "auto",
+              right: c.side === "right" ? 0 : "auto",
+              fontSize: c.size,
+            }}
+            initial={{ opacity: 0, x: 0, y: 0, scale: 0.5, rotate: 0 }}
+            animate={{ opacity: [0, 1, 1, 0], x: c.dx, y: c.dy, scale: 1, rotate: c.rot }}
+            transition={{ duration: c.duration, ease: "easeOut" }}
+          >
+            {c.shape}
+          </motion.span>
+        ))}
+      </div>
       </div>
     </section>
   );

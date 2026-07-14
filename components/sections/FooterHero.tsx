@@ -13,7 +13,7 @@ export default function HeroSection() {
         {/* Background Image dari Unsplash */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1920&q=80"
+            src="/footer.webp"
             alt="Wedding couple"
             fill
             className="object-cover"
@@ -58,7 +58,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-[8px] sm:text-[10px] tracking-[0.25em] uppercase font-light"
           >
-            Created on Cordially.io
+            Created by Wisnu Ibnu
           </motion.p>
 
           {/* Scroll Indicator */}
