@@ -14,7 +14,7 @@ export default function HeroSection() {
         {/* Background Image dari Unsplash */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/8.jpeg"
+            src="https://res.cloudinary.com/dhuhppqch/image/upload/v1784125907/8_bxmhlx.jpg"
             alt="Wedding couple"
             fill
             className="object-cover"

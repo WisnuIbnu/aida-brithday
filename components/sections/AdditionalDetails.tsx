@@ -91,60 +91,64 @@ const detailCards: DetailCard[] = [
       "/16.png",
     photos: [
       {
-        src: "/14.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125913/14_y3pu3k.png",
         caption: "Sayang ngantuk",
       },
       {
-        src: "/15.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125913/15_jom0ff.png",
         caption: "Sayang pulang kampung",
       },
       {
-        src: "/17.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125896/17_xvyus1.png",
         caption: "Sayang pake makeup",
       },
       {
-        src: "/18.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125906/25_iil6lm.png",
         caption: "sayangku ngeledek",
       },
       {
-        src: "/19.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125901/19_e4ynio.png",
         caption: "sok kerasss",
       },
       {
-        src: "/20.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125901/20_sculfn.png",
         caption: "cobain kacamata kania",
       },
       {
-        src: "/21.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125903/21_m30p6s.png",
         caption: "Cantik bangettt aku suka",
       },
       {
-        src: "/30.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125914/30_emv0ka.png",
         caption: "paling pendek era",
       },
       {
-        src: "/23.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125905/23_eecthn.png",
         caption: "habis makeup cantikkyyu",
       },
       {
-        src: "/24.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125906/24_j2t6ny.png",
         caption: "muka-muka lapar jam 10 malem",
       },
       {
-        src: "/25.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125906/25_iil6lm.png",
         caption: "Mauu ciummmm",
       },
       {
-        src: "/26.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125911/26_ianbdh.png",
         caption: "Adik kecik hausss",
       },
       {
-        src: "/27.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125896/27_hbe1it.png",
         caption: "prepare pilih kerudung, wisuda masih seminggu padahal",
       },
       {
-        src: "/29.png",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125897/29_z9pxwi.png",
         caption: "Our Daily Meet 26/7",
+      },
+      {
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784135503/wsnu_dygqiv.png",
+        caption: "I Love You So Much",
       },
     ],
     sections: [

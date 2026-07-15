@@ -42,7 +42,7 @@ export default function ParallaxHero() {
           }}
         >
           <Image
-            src="/3.jpeg"
+            src="https://res.cloudinary.com/dhuhppqch/image/upload/v1784125901/3_frpx5o.jpg"
             alt="Couple proposing in the mountains"
             fill
             priority

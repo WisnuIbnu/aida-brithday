@@ -18,7 +18,7 @@ type CardSpec = {
 
 const cards: CardSpec[] = [
   {
-    src: "/10.jpeg",
+    src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125901/20_sculfn.png",
     alt: "Cliff landscape",
     className: "left-[1.8%] top-[5%] w-[23vw] h-[42vh] rounded-[32px] overflow-hidden z-10",
     fromX: -40,
@@ -26,7 +26,7 @@ const cards: CardSpec[] = [
     delay: 0,
   },
   {
-    src: "/4.jpeg",
+    src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125901/4_hv4nbg.jpg",
     alt: "Black and white couple",
     className: "left-[4.2%] top-[49%] w-[21vw] h-[30vh] rounded-[32px] overflow-hidden z-10",
     fromX: -35,
@@ -34,7 +34,7 @@ const cards: CardSpec[] = [
     delay: 0.1,
   },
   {
-    src: "/9.jpeg",
+    src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125907/9_hca511.jpg",
     alt: "Cliff edge",
     className: "right-[4.2%] top-[25%] w-[21vw] h-[30vh] rounded-[32px] overflow-hidden z-10",
     fromX: 40,
@@ -42,7 +42,7 @@ const cards: CardSpec[] = [
     delay: 0.2,
   },
   {
-    src: "/5.jpeg",
+    src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125903/5_chd0qg.jpg",
     alt: "POV legs on cliff",
     className: "right-[1.8%] bottom-[1%] w-[23vw] h-[42vh] rounded-[32px] overflow-hidden z-10",
     fromX: 0,
