@@ -83,249 +83,166 @@ function RenderSection({ section }: { section: DetailSection }) {
 const detailCards: DetailCard[] = [
   {
     id: 1,
-    title: "Wedding Parties",
-    subtitle: "Who is standing with us",
+    title: "Koas IPD & Bedah",
+    subtitle: "",
     description:
-      "The people closest to the couple, helping carry the day with love and calm energy.",
+      "my honey bunny sweety preety💖",
     image:
-      "https://images.unsplash.com/photo-1523438097201-512ae7d59f87?auto=format&fit=crop&w=1400&q=80",
+      "/16.png",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1523438097201-512ae7d59f87?auto=format&fit=crop&w=1200&q=80",
-        caption: "The wedding party",
+        src: "/14.png",
+        caption: "Sayang ngantuk",
       },
       {
-        src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80",
-        caption: "Bridesmaids",
+        src: "/15.png",
+        caption: "Sayang pulang kampung",
       },
       {
-        src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80",
-        caption: "Groomsmen",
+        src: "/17.png",
+        caption: "Sayang pake makeup",
       },
       {
-        src: "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=1200&q=80",
-        caption: "Flower girls",
+        src: "/18.png",
+        caption: "sayangku ngeledek",
       },
       {
-        src: "https://images.unsplash.com/photo-1493244040629-496f6d136cc3?auto=format&fit=crop&w=1200&q=80",
-        caption: "Ring bearers",
+        src: "/19.png",
+        caption: "sok kerasss",
       },
       {
-        src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-        caption: "Celebration",
+        src: "/20.png",
+        caption: "cobain kacamata kania",
+      },
+      {
+        src: "/21.png",
+        caption: "Cantik bangettt aku suka",
+      },
+      {
+        src: "/30.png",
+        caption: "paling pendek era",
+      },
+      {
+        src: "/23.png",
+        caption: "habis makeup cantikkyyu",
+      },
+      {
+        src: "/24.png",
+        caption: "muka-muka lapar jam 10 malem",
+      },
+      {
+        src: "/25.png",
+        caption: "Mauu ciummmm",
+      },
+      {
+        src: "/26.png",
+        caption: "Adik kecik hausss",
+      },
+      {
+        src: "/27.png",
+        caption: "prepare pilih kerudung, wisuda masih seminggu padahal",
+      },
+      {
+        src: "/29.png",
+        caption: "Our Daily Meet 26/7",
       },
     ],
     sections: [
-      { type: "heading1", content: "THE BRIDAL PARTY" },
-      { type: "heading2", content: "Maid of Honor" },
+      { type: "heading1", content: "Activities" },
+      { type: "heading2", content: "Semua Kegiatan ayang sehari-hari" },
       {
         type: "paragraph",
-        content: "Sarah Johnson - Best friend since childhood",
+        content: "Aku sayang kamu terima kasih sudah mau berbagi waktu dan perhatianmu untuk aku, cerita keseharian kamuu gimana hari ini dan lain-lain.",
       },
-      { type: "heading2", content: "Best Man" },
-      { type: "paragraph", content: "Michael Chen - Brother of the groom" },
-      { type: "heading1", content: "THE GROOMSMEN" },
       {
-        type: "list",
-        content: "Groomsmen",
-        items: ["David Williams", "James Rodriguez", "Thomas Lee"],
-      },
+        type: "paragraph",
+        content: "i love you my honey bunny sweety preety cutie pie, my love, my everything, my soulmate, my best friend, my partner in crime, my confidant, my rock, my sunshine, my moonlight, my star, my universe, my world, my heart, my soul, my life.",
+      }
     ],
   },
-  {
-    id: 2,
-    title: "Ceremony Timing",
-    subtitle: "Arrive with ease",
-    description:
-      "A simple timeline that keeps the afternoon unhurried and the ceremony comfortably on track.",
-    image:
-      "https://images.unsplash.com/photo-1510070009289-b5bc34383727?auto=format&fit=crop&w=1400&q=80",
-    photos: [
-      {
-        src: "https://images.unsplash.com/photo-1510070009289-b5bc34383727?auto=format&fit=crop&w=1200&q=80",
-        caption: "Ceremony venue",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-        caption: "Seating arrangement",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
-        caption: "Aisle decor",
-      },
-    ],
-    sections: [
-      { type: "heading1", content: "TIMELINE" },
-      { type: "heading2", content: "Arrival" },
-      {
-        type: "paragraph",
-        content:
-          "Guests are encouraged to arrive a little early, settle in, and enjoy the atmosphere before the ceremony begins.",
-      },
-      { type: "heading2", content: "The Ceremony" },
-      {
-        type: "paragraph",
-        content:
-          "The goal is a calm entrance and a smooth transition into the evening, with the ceremony comfortably on track.",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Dress Code",
-    subtitle: "Soft formal, relaxed finish",
-    description:
-      "Elegant enough for photos, comfortable enough to dance through the rest of the night.",
-    image:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1400&q=80",
-    photos: [
-      {
-        src: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1200&q=80",
-        caption: "Bridal gown",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-        caption: "Groom suit",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80",
-        caption: "Bridesmaid dresses",
-      },
-    ],
-    sections: [
-      { type: "heading1", content: "DRESS CODE" },
-      { type: "heading2", content: "For Everyone" },
-      {
-        type: "paragraph",
-        content:
-          "Think polished silhouettes, breathable fabrics, and shoes that can handle a full evening of celebration.",
-      },
-      { type: "heading2", content: "Our Ask" },
-      {
-        type: "text",
-        content:
-          "We are aiming for a refined look\nthat still feels easy to wear.\nSoft formal, relaxed finish.",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Travel Notes",
-    subtitle: "Getting there without stress",
-    description:
-      "Helpful guidance for out-of-town guests, parking, and the easiest route into the venue.",
-    image:
-      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1400&q=80",
-    photos: [
-      {
-        src: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1200&q=80",
-        caption: "Venue entrance",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-        caption: "Scenic route",
-      },
-    ],
-    sections: [
-      { type: "heading1", content: "GETTING THERE" },
-      { type: "heading2", content: "By Car" },
-      {
-        type: "paragraph",
-        content:
-          "We will share the most convenient arrival options, local transport notes, and parking suggestions.",
-      },
-      { type: "heading2", content: "Parking" },
-      {
-        type: "list",
-        content: "Parking options",
-        items: [
-          "On-site valet available",
-          "Street parking on Elm Street",
-          "Public lot two blocks north",
-        ],
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Reception Flow",
-    subtitle: "Dinner, speeches, dancing",
-    description:
-      "The evening moves from welcome drinks into dinner, toasts, and a late-night dance floor.",
-    image:
-      "https://images.unsplash.com/photo-1519167758481-83f29c72fe0c?auto=format&fit=crop&w=1400&q=80",
-    photos: [
-      {
-        src: "https://images.unsplash.com/photo-1519167758481-83f29c72fe0c?auto=format&fit=crop&w=1200&q=80",
-        caption: "Reception hall",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-        caption: "Dinner setup",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1523438097201-512ae7d59f87?auto=format&fit=crop&w=1200&q=80",
-        caption: "Dance floor",
-      },
-    ],
-    sections: [
-      { type: "heading1", content: "THE RECEPTION" },
-      { type: "heading2", content: "Dinner & Toasts" },
-      {
-        type: "paragraph",
-        content:
-          "After the ceremony, the reception opens into a sequence of conversations, shared meals, and a few thoughtful speeches.",
-      },
-      { type: "heading2", content: "Dancing" },
-      {
-        type: "text",
-        content:
-          "Then a dance floor\nthat stays open late.\nStay for the last song.",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Weekend Moments",
-    subtitle: "The parts between the parts",
-    description:
-      "Small touches, soft pauses, and the kind of in-between moments that make the weekend memorable.",
-    image:
-      "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1400&q=80",
-    photos: [
-      {
-        src: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80",
-        caption: "Candlelight",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=1200&q=80",
-        caption: "Quiet moments",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80",
-        caption: "Evening glow",
-      },
-    ],
-    sections: [
-      { type: "heading1", content: "SMALL DETAILS" },
-      { type: "heading2", content: "At The Door" },
-      {
-        type: "paragraph",
-        content:
-          "This section is for the quiet details that often matter most: the greeting at the door, the candlelight between events.",
-      },
-      { type: "heading2", content: "After The Music" },
-      {
-        type: "list",
-        content: "Lingering moments",
-        items: [
-          "Candlelight between events",
-          "Lingering conversations",
-          "The quiet after the music slows",
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: 2,
+  //   title: "Koas & Bridesmaids",
+  //   subtitle: "Who is standing with us",
+  //   description:
+  //     "The people closest to the couple, helping carry the day with love and calm energy.",
+  //   image:
+  //     "/16.png",
+  //   photos: [
+  //     {
+  //       src: "/14.png",
+  //       caption: "Sayang ngantuk",
+  //     },
+  //     {
+  //       src: "/15.png",
+  //       caption: "Sayang pulang kampung",
+  //     },
+  //     {
+  //       src: "/17.png",
+  //       caption: "Sayang pake makeup",
+  //     },
+  //     {
+  //       src: "/18.png",
+  //       caption: "sayangku ngeledek",
+  //     },
+  //     {
+  //       src: "/19.png",
+  //       caption: "sok kerasss",
+  //     },
+  //     {
+  //       src: "/20.png",
+  //       caption: "cobain kacamata kania",
+  //     },
+  //     {
+  //       src: "/21.png",
+  //       caption: "Cantik bangettt aku suka",
+  //     },
+  //     {
+  //       src: "/30.png",
+  //       caption: "paling pendek era",
+  //     },
+  //     {
+  //       src: "/23.png",
+  //       caption: "habis makeup cantikkyyu",
+  //     },
+  //     {
+  //       src: "/24.png",
+  //       caption: "muka-muka lapar jam 10 malem",
+  //     },
+  //     {
+  //       src: "/25.png",
+  //       caption: "Mauu ciummmm",
+  //     },
+  //     {
+  //       src: "/26.png",
+  //       caption: "Adik kecik hausss",
+  //     },
+  //     {
+  //       src: "/27.png",
+  //       caption: "prepare pilih kerudung, wisuda masih seminggu padahal",
+  //     },
+  //     {
+  //       src: "/29.png",
+  //       caption: "Our Daily Meet 26/7",
+  //     },
+  //   ],
+  //   sections: [
+  //     { type: "heading1", content: "Activities" },
+  //     { type: "heading2", content: "Semua Kegiatan ayang sehari-hari" },
+  //     {
+  //       type: "paragraph",
+  //       content: "Sarah Johnson - Best friend since childhood",
+  //     },
+  //     { type: "heading2", content: "Best Man" },
+  //     { type: "paragraph", content: "Michael Chen - Brother of the groom" },
+  //     { type: "heading1", content: "THE GROOMSMEN" },
+  //     {
+  //       type: "list",
+  //       content: "Groomsmen",
+  //       items: ["David Williams", "James Rodriguez", "Thomas Lee"],
+  //     },
+  //   ],
+  // },
 ];
 
 export default function AdditionalDetails() {
@@ -395,14 +312,13 @@ export default function AdditionalDetails() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#8f7765]">
-            additional details
+            Memories
           </p>
           <h2 className="font-display text-balance text-4xl lowercase leading-tight text-[#2a211c] sm:text-5xl">
-            and now some additional details...
+            additional memories and photos
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-8 text-[#6f6359]">
-            The people, places, and practical details that will make the
-            weekend feel effortless.
+            A collection of moments, details, and memories that make the day uniquely ours. Click on each card to explore more.
           </p>
         </div>
 

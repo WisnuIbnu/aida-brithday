@@ -19,6 +19,12 @@ export default function ParallaxHero() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.24], [1, 0]);
   const indicatorOpacity = useTransform(scrollYProgress, [0, 0.14], [1, 0]);
   const imageOverlayOpacity = useTransform(scrollYProgress, [0, 0.32], [0.18, 0]);
+  const titleY = useTransform(scrollYProgress,[0, 0.15], [130, 0]);
+  const titleScale = useTransform(
+    scrollYProgress,
+    [0, 0.46],
+    [0.9, 0.6]
+  );
 
   return (
     <section ref={sectionRef} className="relative h-[380vh] bg-transparent">
@@ -36,7 +42,7 @@ export default function ParallaxHero() {
           }}
         >
           <Image
-            src="/hero.webp"
+            src="/3.jpeg"
             alt="Couple proposing in the mountains"
             fill
             priority
@@ -48,10 +54,10 @@ export default function ParallaxHero() {
           />
 
           <motion.h1
-            style={{ opacity: textOpacity }}
+            style={{ opacity: textOpacity, y: titleY  , scale: titleScale }}
             className="font-display absolute left-1/2 top-1/2 z-20 w-full -translate-x-1/2 -translate-y-1/2 px-3 text-center text-[clamp(3.2rem,12vw,9.2rem)] italic leading-none tracking-tight text-white"
           >
-            Aida &amp; Wisnu 
+           Happy Birthday, Sayangque 💖💕
           </motion.h1>
 
           <motion.p

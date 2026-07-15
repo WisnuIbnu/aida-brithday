@@ -49,7 +49,7 @@ export default function HeartBurst() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[200]">
+    <div className="pointer-events-none fixed inset-0 z-200">
       {hearts.map((h) => (
         <motion.span
           key={h.id}

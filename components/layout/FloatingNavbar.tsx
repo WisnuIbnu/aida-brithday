@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { HelpCircle, Plane, Gift } from "lucide-react";
+import { Plane, Gift } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import RsvpButton from "@/components/ui/RsvpButton";
 
@@ -10,18 +10,13 @@ type TabId = "travel" | "registry" | "faq";
 const tabs: { id: TabId; label: string; icon: React.ReactNode }[] = [
   {
     id: "travel",
-    label: "Travel",
+    label: "Vacation",
     icon: <Plane size={16} />,
   },
   {
     id: "registry",
-    label: "Registry",
+    label: "Memories",
     icon: <Gift size={16} />,
-  },
-  {
-    id: "faq",
-    label: "FAQ",
-    icon: <HelpCircle size={16} />,
   },
 ];
 
@@ -177,7 +172,7 @@ export default function FloatingNavbar() {
             opacity: 1, // ← SET 1
           }}
         >
-          A&W
+          Aida 💖
         </motion.span>
 
         {/* SPACER - Dorong tabs ke kanan */}

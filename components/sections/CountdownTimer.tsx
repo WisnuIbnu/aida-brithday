@@ -169,7 +169,7 @@ export default function CountdownTimer() {
           variants={itemVariants}
           className="font-display text-sm italic leading-relaxed tracking-[0.3em] text-zinc-600 md:text-base"
         >
-          so please join us...
+          Our wedding date
         </motion.p>
 
         <motion.h2
@@ -228,7 +228,7 @@ export default function CountdownTimer() {
           variants={itemVariants}
           className="mt-12 text-sm tracking-[0.25em] text-zinc-400"
         >
-          — saving the date —
+          — Aida & Wisnu —
         </motion.p>
       </motion.div>
 

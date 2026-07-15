@@ -7,6 +7,7 @@ import CountdownTimer from "@/components/sections/CountdownTimer";
 import FooterHero from "@/components/sections/FooterHero";
 import ParallaxMessage from "@/components/sections/ParallaxMassagge";
 import FlowerIntro from "@/components/intro/FlowerIntro";
+import BackgroundMusic from "@/components/ui/BackgroundMusic";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <AdditionalDetails />
         <ParallaxMessage />
         <FooterHero />
+        <BackgroundMusic />
       </main>
     </FlowerIntro>
   );

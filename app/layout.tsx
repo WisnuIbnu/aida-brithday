@@ -14,8 +14,8 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Jim & Pam Wedding Invitation",
-  description: "A scroll-driven wedding invitation experience.",
+  title: "Aida Birthday",
+  description: "A scroll-driven birthday invitation experience.",
 };
 
 export default function RootLayout({

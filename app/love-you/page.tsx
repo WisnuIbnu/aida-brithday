@@ -3,16 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import NextImage from "next/image";
+import BackgroundMusic from "@/components/ui/BackgroundMusic";
+import HeartBurst from "@/components/intro/HeartBurst";
 
 const FULL_TEXT = "laborum.";
 const TYPE_INTERVAL = 90;
 
 const BG_IMAGE =
-  "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=1920&q=80";
+  "/1.jpeg";
 
-// Custom photo shown inside the modal (Unsplash, dummy)
 const MODAL_PHOTO =
-  "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=70";
+  "/13.jpeg";
 
 type Stage = "envelope" | "letter";
 
@@ -24,7 +25,8 @@ type Step =
   | "schedule"
   | "activity"
   | "message"
-  | "preview";
+  | "preview"
+  | "final";
 
 const TIME_OPTIONS = ["Pagi", "Siang", "Sore", "Malam"] as const;
 
@@ -55,7 +57,7 @@ const ACTIVITIES: Activity[] = [
   },
   {
     id: "jalan",
-    label: "Jalan",
+    label: "Jalan-jalan",
     image:
       "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=400&q=70",
   },
@@ -75,7 +77,7 @@ const ACTIVITIES: Activity[] = [
     id: "photobooth",
     label: "Photobooth",
     image:
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=70",
+"https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=400&q=70"
   },
   {
     id: "belanja",
@@ -84,8 +86,6 @@ const ACTIVITIES: Activity[] = [
       "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=70",
   },
 ];
-
-const WHATSAPP_HREF = "https://wa.me/"; // TODO: isi nomor tujuan sendiri, mis. https://wa.me/62812xxxxxx
 
 function TicketField({ label, value }: { label: string; value: string }) {
   return (
@@ -150,7 +150,7 @@ export default function LoveYouPage() {
   const onYes = () => {
     setAccepted(true);
     setStep("cheer");
-    setTimeout(() => setStep("schedule"), 2200);
+    setTimeout(() => setStep("schedule"), 5000);
     setTimeout(() => setAccepted(false), 3500);
   };
 
@@ -168,138 +168,6 @@ export default function LoveYouPage() {
     activity
       ? ACTIVITIES.find((a) => a.id === activity)?.label
       : activityManual.trim();
-
-
-  const downloadTicket = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const W = 1080;
-    const H = 1600;
-    canvas.width = W;
-    canvas.height = H;
-
-    const grad = ctx.createLinearGradient(0, 0, 0, H);
-    grad.addColorStop(0, "#fff1f4");
-    grad.addColorStop(1, "#ffe4ec");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
-
-    // Border
-    ctx.strokeStyle = "#f43f5e";
-    ctx.lineWidth = 10;
-    ctx.strokeRect(40, 40, W - 80, H - 80);
-
-    ctx.textAlign = "center";
-
-    // 1. TITLE
-    ctx.fillStyle = "#be123c";
-    ctx.font = "bold 72px Georgia, 'Times New Roman', serif";
-    ctx.fillText("TIKET KENCAN 💖", W / 2, 200);
-
-    // 2. SUBTITLE
-    ctx.fillStyle = "#52525b";
-    ctx.font = "36px Georgia, serif";
-    ctx.fillText("Untuk: Aida", W / 2, 270);
-
-    // 3. FIELDS
-    let y = 370;
-    const labelX = 150;
-    const lineHeight = 150;
-    
-    const drawField = (label: string, value: string) => {
-      ctx.textAlign = "left";
-      ctx.fillStyle = "#9f1239";
-      ctx.font = "bold 36px Georgia, serif";
-      ctx.fillText(`- ${label}`, labelX, y);
-      
-      ctx.fillStyle = "#27272a";
-      ctx.font = "36px Georgia, serif";
-      ctx.fillText(value || "-", labelX + 30, y + 60);
-      
-      ctx.strokeStyle = "#fecdd3";
-      ctx.lineWidth = 3;
-      ctx.setLineDash([10, 10]);
-      ctx.beginPath();
-      ctx.moveTo(labelX, y + 100);
-      ctx.lineTo(W - labelX, y + 100);
-      ctx.stroke();
-      ctx.setLineDash([]);
-      
-      y += lineHeight;
-    };
-
-    drawField("Kapan", date);
-    drawField("Waktu", [timeOfDay, time ? `${time}` : ""].filter(Boolean).join(" "));
-    drawField("Acara", activityLabel() ?? "");
-    
-    // 4. PESAN
-    ctx.textAlign = "left";
-    ctx.fillStyle = "#9f1239";
-    ctx.font = "bold 36px Georgia, serif";
-    ctx.fillText(`- Pesan`, labelX, y);
-    
-    ctx.fillStyle = "#27272a";
-    ctx.font = "36px Georgia, serif";
-    const words = message.split(/\s+/);
-    let lineText = "";
-    let my = y + 60;
-    
-    if (message.trim() === "") {
-      ctx.fillText("-", labelX + 30, my);
-      my += 50;
-    } else {
-      for (const w of words) {
-        const test = lineText ? lineText + " " + w : w;
-        if (ctx.measureText(test).width > W - 300 && lineText) {
-          ctx.fillText(lineText, labelX + 30, my);
-          lineText = w;
-          my += 50;
-        } else {
-          lineText = test;
-        }
-      }
-      if (lineText) {
-        ctx.fillText(lineText, labelX + 30, my);
-        my += 50;
-      }
-    }
-
-    const footerStartY = my + 290; 
-    
-    // 6. FOOTER 1
-    ctx.textAlign = "center";
-    ctx.fillStyle = "#be123c";
-    ctx.font = "bold 36px Georgia, serif";
-    ctx.fillText("❤️ Yeay! Date dengan cewek kesayanganku! ❤️", W / 2, footerStartY + 80);
-
-    // 7. FOOTER 2
-    ctx.fillStyle = "#6b7280";
-    ctx.font = "34px Georgia, serif";
-    ctx.fillText("Nanti aku jemput pada waktunya ya sayangku 😊", W / 2, footerStartY + 140);
-
-    // 8. GARIS PEMISAH
-    ctx.strokeStyle = "#fecdd3";
-    ctx.lineWidth = 4;
-    ctx.setLineDash([]);
-    ctx.beginPath();
-    ctx.moveTo(labelX, footerStartY + 190);
-    ctx.lineTo(W - labelX, footerStartY + 190);
-    ctx.stroke();
-
-    // 9. FOOTER 3
-    ctx.fillStyle = "#9f1239";
-    ctx.font = "italic 32px Georgia, serif";
-    ctx.fillText("dari Wisnu ❤️ buat Aida", W / 2, footerStartY + 250);
-
-    // Download
-    const link = document.createElement("a");
-    link.download = "tiket-kencan-aida.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  };
 
   return (
     <main className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
@@ -331,8 +199,10 @@ export default function LoveYouPage() {
             >
               <div className="absolute left-0 top-0 h-0 w-0 border-l-[10rem] border-r-[10rem] rounded-xl border-t-[5rem] border-l-transparent border-r-transparent border-t-[#e8dccb]" />
               <div className="absolute inset-x-0 bottom-0 h-32 rounded-b-2xl bg-[#f3e9da]" />
-              <span className="relative z-10 font-display text-2xl italic text-zinc-700">
-                To: You 💌
+              <span className="relative z-10 font-display text-2xl italic text-zinc-700 text-center mt-5">
+                To: Nur Aida Hidayat
+                <br />
+                kurus cantik jarang jajan 💌
               </span>
             </motion.div>
             <p className="mt-6 text-sm tracking-[0.3em] text-white/80">
@@ -421,9 +291,15 @@ export default function LoveYouPage() {
                     animate={{ y: 0 }}
                     transition={{ type: "spring", stiffness: 120, damping: 14 }}
                   >
-                    <div className="text-6xl">🎉</div>
+                    <NextImage
+                      src="/monyet.png"
+                      alt="Our photo"
+                      className="h-full w-full object-cover"
+                      width={100}
+                      height={100}
+                    />
                     <p className="mt-4 font-display text-2xl italic text-rose-600 sm:text-3xl">
-                      Yeay! Aida bilang iya 💕
+                      Sudah kuduga pasti mauu 💖
                     </p>
                   </motion.div>
                 </div>
@@ -490,7 +366,7 @@ export default function LoveYouPage() {
                     onClick={() => setStep("activity")}
                     className="rounded-full bg-rose-500 px-8 py-3 text-sm font-semibold tracking-wide text-white shadow-lg transition hover:bg-rose-600"
                   >
-                    Lanjutkan
+                    Gass lanjut
                   </button>
                 </div>
               )}
@@ -546,7 +422,7 @@ export default function LoveYouPage() {
                     onClick={() => setStep("message")}
                     className="rounded-full bg-rose-500 px-8 py-3 text-sm font-semibold tracking-wide text-white shadow-lg transition hover:bg-rose-600"
                   >
-                    Lanjut
+                    Lanjut sayangkuu 
                   </button>
                 </div>
               )}
@@ -570,7 +446,7 @@ export default function LoveYouPage() {
                     onClick={() => setStep("preview")}
                     className="rounded-full bg-rose-500 px-8 py-3 text-sm font-semibold tracking-wide text-white shadow-lg transition hover:bg-rose-600"
                   >
-                    Tiket
+                    Submit
                   </button>
                 </div>
               )}
@@ -589,7 +465,7 @@ export default function LoveYouPage() {
                     }}
                   >
                     {MODAL_PHOTO && (
-                      <div className="mx-auto mb-3 h-24 w-24 overflow-hidden rounded-2xl shadow-md">
+                      <div className="mx-auto mb-3 h-24 w-35 overflow-hidden rounded-2xl shadow-md">
                         <NextImage
                           src={MODAL_PHOTO}
                           alt="Our photo"
@@ -648,13 +524,15 @@ export default function LoveYouPage() {
                   <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row">
                     <button
                       type="button"
-                      onClick={downloadTicket}
+                      onClick={() => {
+                        setStep("final");
+                      }}
                       className="flex-1 rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-lg transition hover:bg-rose-600"
                     >
                       Download Tiket
                     </button>
                     <a
-                      href={WHATSAPP_HREF}
+                      href="#"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 rounded-full border border-rose-300 bg-white px-6 py-3 text-center text-sm font-semibold tracking-wide text-rose-600 shadow-sm transition hover:bg-rose-50"
@@ -672,6 +550,25 @@ export default function LoveYouPage() {
                   </button>
 
                   <canvas ref={canvasRef} className="hidden" />
+                </div>
+              )}
+
+              {step === "final" && (
+                <div className="flex flex-col items-center justify-center py-27">
+                  <div className="mb-6 text-center">
+                    <p className="font-display text-2xl italic text-zinc-800 sm:text-3xl">
+                      klik dibawah ini sayangkuu
+                    </p>
+                  </div>
+                  
+                  <a
+                    href="https://extrawedding.github.io/aidaloveyou/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-rose-500 px-8 py-3 text-sm font-semibold tracking-wide text-white shadow-lg transition hover:bg-rose-600"
+                  >
+                    Buka Tiket
+                  </a>
                 </div>
               )}
 
@@ -712,7 +609,7 @@ export default function LoveYouPage() {
               onClick={onYes}
               className="pointer-events-auto rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-md"
             >
-              Ya I Will
+              Mau Buangettt rekkkk Sayang wisnuuu 😘
             </motion.button>
           </div>
         )}
@@ -736,7 +633,7 @@ export default function LoveYouPage() {
             style={{ position: "fixed" }}
             className="z-70 rounded-full border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-600 shadow-sm"
           >
-            No
+            Gamau <span className="line-through">(Pura-pura ga lihat)</span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -753,6 +650,9 @@ export default function LoveYouPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <BackgroundMusic />
+      <HeartBurst />
     </main>
   );
 }

@@ -18,7 +18,7 @@ type CardSpec = {
 
 const cards: CardSpec[] = [
   {
-    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    src: "/10.jpeg",
     alt: "Cliff landscape",
     className: "left-[1.8%] top-[5%] w-[23vw] h-[42vh] rounded-[32px] overflow-hidden z-10",
     fromX: -40,
@@ -26,7 +26,7 @@ const cards: CardSpec[] = [
     delay: 0,
   },
   {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=80",
+    src: "/4.jpeg",
     alt: "Black and white couple",
     className: "left-[4.2%] top-[49%] w-[21vw] h-[30vh] rounded-[32px] overflow-hidden z-10",
     fromX: -35,
@@ -34,7 +34,7 @@ const cards: CardSpec[] = [
     delay: 0.1,
   },
   {
-    src: "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=1000&q=80",
+    src: "/9.jpeg",
     alt: "Cliff edge",
     className: "right-[4.2%] top-[25%] w-[21vw] h-[30vh] rounded-[32px] overflow-hidden z-10",
     fromX: 40,
@@ -42,7 +42,7 @@ const cards: CardSpec[] = [
     delay: 0.2,
   },
   {
-    src: "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=1000&q=80",
+    src: "/5.jpeg",
     alt: "POV legs on cliff",
     className: "right-[1.8%] bottom-[1%] w-[23vw] h-[42vh] rounded-[32px] overflow-hidden z-10",
     fromX: 0,

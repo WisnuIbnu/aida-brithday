@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export default function HeroSection() {
         {/* Background Image dari Unsplash */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/footer.webp"
+            src="/8.jpeg"
             alt="Wedding couple"
             fill
             className="object-cover"
@@ -69,7 +70,7 @@ export default function HeroSection() {
             className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30"
           >
             <span className="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase font-light">
-              Scroll
+              Nur Aida Hidayati
             </span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
@@ -80,19 +81,21 @@ export default function HeroSection() {
                 repeatDelay: 0.5
               }}
             >
-              <svg 
-                className="w-4 h-4" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="mt-6 sm:mt-8"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={1.5} 
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3" 
-                />
-              </svg>
+                <Link
+                  href="/love-you"
+                  className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-medium text-sm sm:text-base transition-all duration-300 hover:bg-white/20 hover:scale-105 hover:shadow-xl"
+                >
+                  <span>💕</span>
+                  <span>My Lovely Aida</span>
+                  <span>→</span>
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>

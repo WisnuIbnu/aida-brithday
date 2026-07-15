@@ -81,17 +81,16 @@ export default function FlowerIntro({ children }: { children: React.ReactNode })
 
             {/* 🔥 Teks di atas tengah */}
             <motion.div
-              className="pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 translate-y-[160%] px-4 text-center"
+              className="pointer-events-none absolute left-1/2 top-[75%] z-20 -translate-x-1/2 px-4 text-center"
               animate={clicked ? { opacity: 0 } : { opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <p className="text-base font-light tracking-[0.25em] text-white/90 sm:text-lg">
-                an advanture to wonderlands awaits..
+              <p className="whitespace-nowrap text-xl font-light tracking-[0.25em] text-white/90 sm:text-lg">
+              A special website for my honey bunny sweety preety 💕
               </p>
             </motion.div>
 
-            {/* 🔥 Button di bawah tengah */}
-            <motion.button
+             <motion.button
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
@@ -102,7 +101,7 @@ export default function FlowerIntro({ children }: { children: React.ReactNode })
               animate={clicked ? { opacity: 0, scale: 0.8 } : { opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
             >
-              click to continues
+              Klik ini sayangkuuuuuuu💖
             </motion.button>
           </motion.div>
         )}
