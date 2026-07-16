@@ -641,7 +641,7 @@ export default function LoveYouPage() {
                       className="mt-5 italic"
                       style={{ color: "#be123c", fontFamily: "Georgia, serif", fontSize: "0.9rem" }}
                     >
-                      See you soon, sayangku 💕
+                      See you soon, sayangku💕
                     </p>
                   </div>
 
@@ -751,7 +751,7 @@ export default function LoveYouPage() {
               onClick={onYes}
               className="pointer-events-auto rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-md"
             >
-              Mau Buangettt rekkkk Sayang wisnuuu 😘
+              Mau Buangettt rekkkk Sayang wisnuuu😘
             </motion.button>
           </div>
         )}

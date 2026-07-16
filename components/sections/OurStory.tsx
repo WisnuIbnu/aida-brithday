@@ -32,21 +32,21 @@ const storyData: StoryChapter[] = [
     id: 1,
     chapter: "chapter one",
     title: "how we met",
-    text: "We met at university, became fast friends, and eventually realized the best parts of every week were the parts we spent together.",
-    align: "left", // ID 1 di kiri
+    text: "Kita ketemu dimalang saat perlombaan MTQMN 2023, aku perhatiin dia dari jauh dan aku dapat idee buat dapat nomor WA aida, karena aku panitia yaudah aku cari aja list nama peserta dari Untirta terus aku minta data peserta lomba aku chatt aidaa. Yeay diakhir lomba aku foto sama aidaaaa",
+    align: "left",
     rotation: -4,
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-        caption: "First year on campus",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125914/30_emv0ka.png",
+        caption: "First meet at MTQMN 2023",
       },
       {
-        src: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
-        caption: "Late afternoon walk",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194972/s_uhigp8.png",
+        caption: "First meet at MTQMN 2023",
       },
       {
-        src: "https://images.unsplash.com/photo-1523438097201-512ae7d59f87?auto=format&fit=crop&w=1200&q=80",
-        caption: "Coffee between classes",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194958/q_wftccn.png",
+        caption: "Jaga malemm",
       },
     ],
   },
@@ -54,73 +54,73 @@ const storyData: StoryChapter[] = [
     id: 2,
     chapter: "chapter two",
     title: "falling in love",
-    text: "Toronto became our home base for late dinners, weekend walks, shared routines, and all of the small moments that made life feel bigger.",
-    align: "right", // ID 2 di kanan
+    text: "Aida kode aku pas semproo tapi aku ga notice, terus pas semhasss aku disuruh upload fotoo dia setelah semhas karena aida sebel si wisnu ga gerak gerak. Akhirnyaaa aku upload hehe 💕",
+    align: "right",
     rotation: 3,
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80",
-        caption: "A FAVORITE CITY CORNER",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194952/i_jwsezk.png",
+        caption: "Sempro Des 2024 & Semhas Mei 2025",
       },
       {
-        src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80",
-        caption: "Black and white moment",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194938/o_jmzn0p.png",
+        caption: "Lupaa foto dimana tapi cantikk",
       },
       {
-        src: "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=1200&q=80",
-        caption: "City lights",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1493244040629-496f6d136cc3?auto=format&fit=crop&w=1200&q=80",
-        caption: "A quiet evening",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194928/t_ybg0al.png",
+        caption: "Cegilll boss",
       },
     ],
   },
   {
     id: 3,
     chapter: "chapter three",
-    title: "the next step",
-    text: "A trip, a question, a very easy yes, and suddenly the future we had been imagining became something we could invite everyone into.",
-    align: "left", // ID 3 di kiri
+    title: "Aida Ngambek",
+    text: "Saat ini aida cerita kalo dia ada yang deketin dan diajak untuk jalan sama-sama dokter, akhirnya aku ngalah aku suruh aida buat jalan sama dia karena aku tau diri aku ga bisa ngalahin dokter, terus dia nunggu aku sampe malam eh aku ngmng aku ngantukk, dan aku ga chat seminggu full, tbtb aida chat dia ngechat sarkas ke akuu, yah aku gapaham kalo itu sarkass akhirnya ngambekk dan kita deeptalk hehe",
+    align: "left",
     rotation: -2,
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-        caption: "RIGHT AFTER YES",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194923/y_xnr1qk.png",
+        caption: "Krisis & Tantangan",
       },
       {
-        src: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80",
-        caption: "The question",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194922/e_sk3hr5.png",
+        caption: "Ciummm Lovee you😘",
       },
       {
-        src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-        caption: "The easy yes",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784135503/wsnu_dygqiv.png",
+        caption: "Ciummm sekali lagi😘",
+      },
+      {
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125907/9_hca511.jpg",
+        caption: "Anaknya pak muhtadi ni boss",
       },
     ],
   },
   {
     id: 4,
     chapter: "chapter four",
-    title: "forever",
-    text: "Now we're here, planning a celebration of everything that brought us to this moment, and everything that comes next.",
-    align: "right", // ID 4 di kanan
+    title: "Forever",
+    text: "Chapter Baru kita, kita komitment dan bertumbuh bersama, kita akan selalu ada untuk satu sama lain, saling mendukung dan mencintai. Terima Kasih my honey bunny preety sweety cantikku💕💖",
+    align: "right",
     rotation: 5,
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1460364157752-bf4a5f8c3fbb?auto=format&fit=crop&w=1200&q=80",
-        caption: "The easiest yes",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784194968/d_d2lh7r.png",
+        caption: "Now and Forever",
       },
       {
-        src: "https://images.unsplash.com/photo-1523438097201-512ae7d59f87?auto=format&fit=crop&w=1200&q=80",
-        caption: "Forever begins",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784135937/foto2_dtrsj5.png",
+        caption: "Ciummm lagii 3x😘",
       },
       {
-        src: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80",
-        caption: "Together, always",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125908/7_uoydsd.jpg",
+        caption: "Model alimmm (habis dibantai ujian 🩷😁)",
       },
       {
-        src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80",
-        caption: "The celebration",
+        src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125905/23_eecthn.png",
+        caption: "Terakhir My Honey Bunny Preety Sweety Cantikque Manisquee💖",
       },
     ],
   },
@@ -287,7 +287,7 @@ function ChapterText({ chapter, index, progress }: ChapterTextProps) {
       </p>
       
       {/* 🔥 TITLE - LEBIH BESAR */}
-      <h2 className="mt-1 font-display text-5xl italic leading-tight text-zinc-900 md:text-6xl lg:text-7xl">
+      <h2 className="mt-1 font-display text-4xl italic leading-tight text-zinc-900 md:text-5xl lg:text-6xl">
         {chapter.title}
       </h2>
       
@@ -417,9 +417,6 @@ export default function OurStory() {
                   </p>
                   <p className="mt-2 font-display text-xl italic text-zinc-800 md:text-3xl">
                     {storyData[selectedIndex].photos[selectedPhotoIndex].caption}
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-zinc-600 md:text-sm md:leading-7">
-                    {storyData[selectedIndex].text}
                   </p>
                 </div>
               </motion.div>

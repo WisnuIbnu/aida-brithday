@@ -172,7 +172,7 @@ export default function FloatingNavbar() {
             opacity: 1, // ← SET 1
           }}
         >
-          Aida 💖
+          Aida💖
         </motion.span>
 
         {/* SPACER - Dorong tabs ke kanan */}
