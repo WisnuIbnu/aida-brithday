@@ -718,7 +718,7 @@ export default function LoveYouPage() {
                 <div className="flex flex-col items-center">
                   <div className="mb-4 h-50 w-50 overflow-hidden rounded-2xl shadow-md">
                     <NextImage
-                      src="/foto1.png"
+                      src="https://res.cloudinary.com/dhuhppqch/image/upload/v1784202380/2868254e-66ca-47ed-8bbb-42c4e5b3cefb.png"
                       alt="Our photo"
                       className="h-full w-full object-cover"
                       width={100}

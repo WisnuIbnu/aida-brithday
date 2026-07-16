@@ -88,7 +88,7 @@ const detailCards: DetailCard[] = [
     description:
       "my honey bunny sweety preety💖",
     image:
-      "/16.png",
+      "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125906/16_ksvt5m.png",
     photos: [
       {
         src: "https://res.cloudinary.com/dhuhppqch/image/upload/v1784125913/14_y3pu3k.png",
